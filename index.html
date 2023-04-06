@@ -5,22 +5,15 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
 <body>
-    
+  <div id="chat-window"></div>
+  <div class="input-container">
+    <input id="message" type="text" placeholder="Type a message...">
+    <button id="send-cta">Send</button>
+  </div>
+</div>
+<script src="main.js" type="module"></script>
 </body>
-<script>
-    function createWebSocket() {
-        const websocket = new WebSocket("ws://localhost:8080")
-        websocket.onopen = () => {
-            setInterval(() => {
-                websocket.send(`Client says hello`)
-            }, 2000)
-        }
-        websocket.onmessage = (message) => {
-            console.log(`Client: ${message.data}`)
-        }
-    }
-    createWebSocket()
-</script>
 </html>

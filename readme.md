@@ -12,7 +12,7 @@ Clone this repository to your local machine
 Start server locally:
 
 ```bash
-deno run --allow-net server.ts
+deno run --allow-env --allow-read --allow-net server.ts
 ```
 
 or via Docker:
@@ -24,7 +24,7 @@ docker-compose up -d
 # Testing
 
 ```bash
-deno test --allow-net tests/index.ts
+deno test --allow-env --allow-read --allow-net  tests/index.ts
 ```
 
 Expected

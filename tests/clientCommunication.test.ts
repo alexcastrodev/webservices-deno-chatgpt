@@ -20,5 +20,5 @@ Deno.test("WebSocketServer - send and receive message", async () => {
 
   // Wait for the server to send a message back
   const message = await promise;
-  assertEquals(message, "Client says hello");
+  assertEquals(message, JSON.stringify({"type":"action","data":"writing"}));
 });
